@@ -1,0 +1,142 @@
+{% extends 'catalogue.html' %}
+{% block title %}Конкурсы{% endblock %}
+{% block body %}
+
+    <style>
+        .hero-section {
+            background-color: #fff;
+            padding: 4rem 0;
+        }
+        .hero-sections {
+            background-color:  #ffffff;
+            padding: 4rem 0;
+        }
+
+        .hero-sections1 {
+            background-color:  #f5f5f5;
+            padding: 4rem 0;
+
+        .domain-badge {
+            margin: 0.3rem;
+            white-space: nowrap;
+        }
+
+        .feature-list {
+            font-size: 1.1rem;
+        }
+    </style>
+<body>
+<section class="hero-sections">
+     <div class="container">
+         <div class="row align-items-center g-5">
+             <div class="col-12 col-md-6 order-md-1 order-2 text-center text-md-start">
+             <h2 class="display-5 mb-4 fw-bold text-black" style="color: withe;">
+                Prêt à donner un nouvel élan à votre carrière ?
+             </h2>
+            <p class="lead text-muted mb-4">
+                Mettez à jour vos connaissances, développez de nouvelles compétences, obtenez une certification professionnelle... Quel que soit votre projet de carrière, nous sommes là pour vous conseiller et vous accompagner. Apprenez un métier qui a de l’avenir avec la référence de l’éducation en ligne.
+            </p>
+             </div>
+            <div class="col-8 col-md-4 order-md-2 order-1">
+                <img src="{{ url_for('static', filename='images/sal.png') }}" alt="Formation en ligne" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero-sections">
+     <div class="container">
+         <div class="row align-items-center g-5">
+             <div class="col-12 col-md-6 order-md-1 order-2 text-center text-md-start">
+             <h2 class="display-5 mb-4 fw-bold text-black" style="color: withe;">
+                Gestion de projects
+             </h2>
+            <p class="lead text-muted mb-4">
+               Plan d’affaires complet et professionnel : comment faire
+               Savoir planifier est une vertu nécessaire pour tout entrepreneur. Planifier les étapes que votre entreprise doit suivre vous aide à concentrer vos efforts sur la finalisation d’un projet, sans perdre de ressources et de temps sur des ambitions inaccessibles.
+            </p>
+             </div>
+            <div class="col-8 col-md-4 order-md-2 order-1">
+                <img src="{{ url_for('static', filename='images/gestion.png') }}" alt="Formation en ligne" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section >
+       <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3>Les questions fréquentes</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                J’hésite entre plusieurs formations, que faire ?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous aidons à choisir la formation la plus adaptée à votre profil et à vos objectifs professionnels.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+</section>
+<section class="hero-sections">
+     <div class="container">
+         <div class="row align-items-center g-5">
+             <div class="col-12 col-md-6 order-md-1 order-2 text-center text-md-start">
+             <h2 class="display-5 mb-4 fw-bold text-black" style="color: withe;">
+                Gestion de projects
+             </h2>
+            <p class="lead text-muted mb-4">
+               Plan d’affaires complet et professionnel : comment faire
+               Savoir planifier est une vertu nécessaire pour tout entrepreneur. Planifier les étapes que votre entreprise doit suivre vous aide à concentrer vos efforts sur la finalisation d’un projet, sans perdre de ressources et de temps sur des ambitions inaccessibles.
+            </p>
+             </div>
+            <div class="col-8 col-md-4 order-md-2 order-1">
+                <img src="{{ url_for('static', filename='images/gestion.png') }}" alt="Formation en ligne" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+{% endblock %}

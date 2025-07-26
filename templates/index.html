@@ -1,0 +1,317 @@
+{% extends 'catalogue.html' %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>it-Moungoi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <style>
+
+        .hero-section {
+            background-color: ;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+         /* Dans votre fichier CSS */
+         header {
+            background-color: black !important;
+        }
+         header a {
+            color: orange !important;
+        }
+         .section-orange {
+             background-color: ##fd7e14;
+         }
+
+    </style>
+</head>
+<body>
+  <div class="section-orange">
+    <div class="container py-5">
+        <div class="card shadow mb-5" style="background-color: #2c3e50; color: white">
+        <div class="card-body">
+          <div class="text-center mb-5">
+             <h1 class="display-4 mb-3" >Des compétences d'aujourd'hui qui ont de l'avenir</h1>
+             <p class="lead">Notre différence ? Une école 100% en ligne et un modèle pédagogique unique qui seront les clés de votre réussite.</p>
+             <!--img src="{{ url_for('static', filename='images/logo.png') }}" class="rounded-circle" alt="Photo Anadjib"-->
+         </div>
+            </div>
+        </div>
+
+
+        <div class="row g-4">
+            <!-- Étudiants Section -->
+            <div class="col-md-6">
+                <div class="card shadow ">
+                <div class="h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <h2 class="mb-4">Étudiants</h2>
+                    <p class="mb-4">Faites un grand pas vers votre nouvelle carrière en suivant l'une de nos formations diplômantes.</p>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary me-2 mb-2" ><a class="nav-link" href="/inscription">Démarrer mon inscription</a></button>
+                        <button class="btn btn-outline-primary mb-2"><a class="nav-link" href="/formation" >Découvrir les formations</a></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Employeurs Section -->
+            <div class="col-md-6">
+                <div class="card shadow ">
+                <div class="h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <h2 class="mb-4">Domaine de formation </h2>
+                    <p class="mb-4">Recruter des alternants quand vous en avez besoin et former vos équipes à des compétences opérationnelles.</p>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-success me-2 mb-2">Explorer l'espace de domaine</button>
+                        <!-- button class="btn btn-outline-success mb-2">Découvrir nos offres business</button -->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+  </div>
+        <main class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Carte 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-laptop fa-3x text-purple mb-3"></i>
+                            <h3 class="h4 mb-3">Apprenez où que vous soyez</h3>
+                            <p class="text-muted">Accédez à votre formation 100% en ligne au bureau, à la maison, en ville, à la montagne... Partout !</p>
+                            <a class="nav-link" href="/cours" >Découvrir les cours</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-user-tie fa-3x text-purple mb-3"></i>
+                            <h3 class="h4 mb-3">Un mentor pour vous accompagner</h3>
+                            <p class="text-muted">Bénéficiez des conseils d'un expert du métier qui vous aide à progresser tout au long de votre formation.</p>
+                            <a class="nav-link" href="/user_page" >Découvrir les cours</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow hover-effect">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-briefcase fa-3x text-purple mb-3"></i>
+                            <h3 class="h4 mb-3">Projets professionnalisants</h3>
+                            <p class="text-muted">Réalisez des projets concrets, issus de scénarios métiers, directement applicables dans le monde du travail.</p>
+                            <a class="nav-link" href="/user_page" >Découvrir les cours</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <section class="py-5">
+       <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3>Les questions fréquentes</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                J’hésite entre plusieurs formations, que faire ?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous aidons à choisir la formation la plus adaptée à votre profil et à vos objectifs professionnels.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+</section>
+
+    <!-- script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"--><!--/script -->
+<section class="py-5">
+    <div class="container mt-5">
+        <div class="card shadow" style="max-width: 800px; margin: 0 auto;">
+            <div class="card-body p-0" style="height: 500px;">
+                <video
+                    src="{{ url_for('static', filename='videos/Fonctions.mp4') }}"
+                    class="w-100 h-100"
+                    style="object-fit: contain;"
+                    autoplay
+                    muted
+                    controls
+                    playsinline
+                 >
+                    Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                </video>
+            </div>
+            <div class="card-footer text-muted">
+                <small>Format supporté : MP4 - Durée : 2:30</small>
+            </div>
+        </div>
+    </div>
+</section>
+      <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Colonne Texte -->
+                <div class="col-12 col-md-6 order-md-1 order-2 text-center text-md-start">
+                    <h1 class="display-5 mb-4 fw-bold text-black" style="color: orange;">
+                        Prêt à donner un nouvel élan à votre carrière ?
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Mettez à jour vos connaissances, développez de nouvelles compétences, obtenez une certification professionnelle... Quel que soit votre projet de carrière, nous sommes là pour vous conseiller et vous accompagner. Apprenez un métier qui a de l’avenir avec la référence de l’éducation en ligne.
+                    </p>
+                </div>
+                <!-- Colonne Image -->
+                <div class="col-12 col-md-6 order-md-2 order-1">
+                    <img src="{{ url_for('static', filename='images/mougoiss.png') }}" alt="Formation en ligne" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+</section>
+
+          <section class="hero-sections">
+    <div class="container">
+        <div class="row w-100 shadow rounded p-4" style="background-color: #2c3e50; color: white">
+            <!-- Formulaire -->
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h3 class="text-center">Créez un compte</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date de naissance</label>
+                        <input type="date" class="form-control" id="dob" required>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="newsletter">
+                        <label class="form-check-label" for="newsletter">
+                            J’accepte de recevoir des communications.
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="cgu" required>
+                        <label class="form-check-label" for="cgu">
+                            J’accepte les <a href="#">Conditions Générales d'Utilisation</a>.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Créer mon compte</button>
+                </form>
+            </div>
+            <!-- Section Témoignage -->
+            <div class="col-md-6 blue-bg text-center d-flex flex-column justify-content-center align-items-center" style="background-color: #2c3e50; color: white">
+                <img src="{{ url_for('static', filename='images/mougoiss.png') }}" class="rounded-circle" alt="Photo Quentin">
+            </div>
+        </div>
+    </div>
+</section>
+
+          </section>
+      <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Colonne Texte -->
+                <div class="col-12 col-md-6 order-md-1 order-2 text-center text-md-start">
+                    <h1 class="display-5 mb-4 fw-bold text-black" style="color: orange;">
+                        Scientifique des données
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Découvrez les professionnels qui analysent des quantités massives de données, font des prédictions et forment des machines.
+                    </p>
+                     <a href="/cours" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#">Visiter les cours</a>
+                </div>
+                <!-- Colonne Image -->
+                <div class="col-12 col-md-6 order-md-2 order-1">
+                    <img src="{{ url_for('static', filename='images/data.png') }}" alt="Formation en ligne" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+
+          <small class="d-block mb-3 text-body-secondary" _msttexthash="84994" _msthash="46"></small>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="326092" _msthash="47">Contacts</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="209638" _msthash="48">Des trucs cool</a></li>
+
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="161395" _msthash="54">Email</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="137475" _msthash="55">Ressource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="97383" _msthash="59">Telephone</h5>
+            <a  class="" >anadjibarabi@gmail.com</a>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="89154" _msthash="60">Équipe</a></li>
+          </ul>
+        </div>
+      </div>
+</footer>
+
+</body>
+{% endblock %}

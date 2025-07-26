@@ -1,0 +1,235 @@
+{% extends 'catalogue.html' %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours en ligne</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #adb5bd;
+        }
+        .course-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .difficulty-badge {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container py-5">
+  <div class="row g-4">
+    <!-- Premier cours -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre Data Sciences</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <!--div class="text-muted">⏱ 10 heures</div -->
+            <video src="{{ url_for('static', filename='videos/Fonctions.mp4') }}" style="object-fit: contain; width: 100%; height: 100%;"
+              autoplay
+              muted></video>
+          </div>
+           <p class="card-text">
+            Apprenez à créer vos premières pages Web en utilisant HTML et CSS, les deux langages les plus utilisés sur le Web.
+            Aucune expérience de codage n'est requise !
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cours IA -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start">
+            <span class="badge bg-success mb-2">Facile</span>
+          </div>
+          <h3 class="card-title mb-3">Destination IA : Introduction à l'intelligence artificielle</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <!--div class="text-muted">⏱ 6 heures</div-->
+            <video src="{{ url_for('static', filename='videos/Fonctions.mp4') }}" style="object-fit: contain; width: 100%; height: 100%;"
+              autoplay
+              muted></video>
+          </div>
+          <p class="card-text">
+            Dans ce cours, vous découvrirez ce qu'est réellement l'intelligence artificielle, au-delà des mythes.
+            Vous comprendrez son potentiel, ses risques et son impact sur le lieu de travail.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cours JavaScript -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre la programmation avec JavaScript</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+            Construisez une base solide en développement Web en apprenant et en pratiquant JavaScript.
+            Vous pourrez même créer une application simple !
+          </p>
+        </div>
+      </div>
+    </div>
+      <!-- Cours AI -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3" style="background-color: #2c3e50; color: white" >Apprendre la programmation avec Python</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+             Apprendre la programmation avec Python, le langage idéal pour les débutants :</br>
+             Pourquoi Python ?</br>
+             Syntaxe simple : Code lisible et proche du langage naturel.</br>
+             Demande professionnelle : Utilisé par Google, Netflix, la NASA, etc.
+          </p>
+        </div>
+      </div>
+      </div>
+
+     <!-- Cours AI -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre la programmation avec SQl</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+            Construisez une base solide en développement Web en apprenant et en pratiquant JavaScript.
+            Vous pourrez même créer une application simple !
+          </p>
+        </div>
+      </div>
+      </div>
+
+    <!-- Cours AI -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre la programmation avec SQlite</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+            Construisez une base solide en développement Web en apprenant et en pratiquant JavaScript.
+            Vous pourrez même créer une application simple !
+          </p>
+        </div>
+      </div>
+      </div>
+
+    <!-- Cours AI -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre Linux/ubuntu</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+            Commencez par utiliser Ubuntu pour des tâches quotidiennes (navigation, bureautique) avant de passer à des fonctionnalités avancées!
+          </p>
+        </div>
+      </div>
+      </div>
+    <!-- Cours AI -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <span class="badge bg-success mb-2">Facile</span>
+          <h3 class="card-title mb-3">Apprendre Cyberviscuité</h3>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="text-muted">⏱ 15 heures</div>
+          </div>
+          <p class="card-text">
+            Construisez une base solide en développement Web en apprenant et en pratiquant JavaScript.
+            Vous pourrez même créer une application simple !
+          </p>
+        </div>
+      </div>
+      </div>
+
+  </div>
+</div>
+<section class="">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Colonne Image -->
+                <div class="col-12 col-md-6 order-md-1 order-2">
+                    <img src="{{ url_for('static', filename='images/and.png') }}" alt="Étudiant en ligne"
+                         class="img-fluid rounded-3 shadow">
+                </div>
+                <!-- Colonne Texte -->
+                <div class="col-12 col-md-6 order-md-2 order-1 text-center text-md-start">
+                    <h1 class="display-5 mb-4 fw-bold text-primary">
+                        Prêt à donner un nouvel élan à votre carrière ?
+                    </h1>
+
+                    <p class="lead text-muted mb-4">
+                        Mettez à jour vos connaissances, développez de nouvelles compétences... Quel que soit votre projet de carrière, nous sommes là pour vous conseiller et vous accompagner. Apprenez un métier qui a de l’avenir avec la référence de l’éducation en ligne.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-lg px-5 py-3 shadow">
+                        Démarrer mon inscription
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+
+          <small class="d-block mb-3 text-body-secondary" _msttexthash="84994" _msthash="46"></small>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="326092" _msthash="47">Contacts</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="209638" _msthash="48">Des trucs cool</a></li>
+
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="161395" _msthash="54">Email</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="137475" _msthash="55">Ressource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5 _msttexthash="97383" _msthash="59">Telephone</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#" _msttexthash="89154" _msthash="60">Équipe</a></li>
+          </ul>
+        </div>
+      </div>
+</footer>
+
+<!-- Liens Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+{% endblock %}

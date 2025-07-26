@@ -1,0 +1,45 @@
+{% extends 'catalogue.html' %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+
+{% with  messages = get_flashed_messages() %}
+   {%if messages%}
+       {%for msg in messages%}
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+               <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                   <strong>{{ msg  }}</strong>
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+     {% endfor %}
+  {% endif %}
+{% endwith %}
+
+</br></br></br>
+<div class="container mt-5">
+    <div class="card shadow mb-5">
+            <div class="card shadow">
+                <div style="background-color: #2c3e50; color: white">
+                    <h3 class="text-center">Un compte existant</h3>
+                </div>
+                <div class="card-body">
+                    <form  method="POST">
+                        <div class="my-2">
+                            <label for="email"><b>Enter Your email</b></label>
+                            <input type="text" name="email" id="email" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for="password"><b>Enter Your Password</b></label>
+                            <input type="password" name="password" id="password" class="form-control my-1">
+                        </div>
+                        <button class="btn btn-success">Submit</button>
+                        <span class="d-flex align-items-center">Already Account ? <a href="/user" class="text-center nav-link">Veiller enregistrez</a></span>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock%}

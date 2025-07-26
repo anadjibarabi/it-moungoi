@@ -1,0 +1,142 @@
+{% extends 'catalogue.html' %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>it-moungoi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background-color: #fd7e14;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center hero-section">
+                <h2>Vers la prochaine étape de votre carrière</h2>
+                <p>Commencez votre parcours de formation ! Nous vous guidons vers la formation (3 à 24 mois) qui vous correspond et vous accompagnons pour trouver le financement adapté à vos besoins.</p>
+                <button class="btn btn-primary"><a class="nav-link" href="/doscier">Commencer mon dossier</a></button>
+                <ul class="list-unstyled mt-3">
+                    <li>✔ Sans frais de dossier</li>
+                    <li>✔ Remplissez votre dossier à votre rythme</li>
+                    <li>✔ Vous aurez un premier retour par e-mail sous 2 jours ouvrés</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3>Les étapes de votre inscription</h3>
+                <ol>
+                    <li>Profil : vous remplissez votre dossier</li>
+                    <li>Orientation : vous recevez instantanément une recommandation adaptée à votre profil</li>
+                    <li>Recrutement : nous vous accompagnons pour trouver un employeur si vous choisissez l’alternance</li>
+                    <li>Finalisation : vous validez votre financement et la date de début de formation</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h3>Les questions fréquentes</h3>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                J’hésite entre plusieurs formations, que faire ?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous aidons à choisir la formation la plus adaptée à votre profil et à vos objectifs professionnels.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                À quels financements suis-je éligible ?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous vous accompagnons pour trouver les solutions de financement adaptées à votre situation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-light">
+    <div class="container mt-5">
+        <div class="card shadow" style="max-width: 800px; margin: 0 auto;">
+            <div class="card-body p-0" style="height: 500px;">
+                <video
+                    src="{{ url_for('static', filename='videos/Fonctions.mp4') }}"
+                    class="w-100 h-100"
+                    style="object-fit: contain;"
+                    autoplay
+                    muted
+                    controls
+                    playsinline >
+                    Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+                </video>
+            </div>
+            <div class="card-footer text-muted">
+                <small>Format supporté : MP4 - Durée : 2:30</small>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Validation côté client
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    const form = event.target;
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    // Vérification de la correspondance des mots de passe
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm_password');
+
+    if (password.value !== confirmPassword.value) {
+        confirmPassword.setCustomValidity("Les mots de passe ne correspondent pas");
+        confirmPassword.classList.add('is-invalid');
+    } else {
+        confirmPassword.setCustomValidity('');
+        confirmPassword.classList.remove('is-invalid');
+    }
+
+    form.classList.add('was-validated');
+});
+
+// Afficher/masquer le mot de passe
+document.querySelectorAll('.password-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function() {
+        const input = this.previousElementSibling;
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+});
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock%}

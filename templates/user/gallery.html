@@ -1,0 +1,37 @@
+{% extends "user/layout.html" %}
+{% block content %}
+<h1>Galerie Média</h1>
+
+<h2>Images</h2>
+<div class="row">
+    {% for image in images %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename='uploads/' + image.filename) }}" class="card-img-top" alt="{{ image.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ image.title }}</h5>
+                <a href="{{ url_for('view_media', media_id=image.id) }}" class="btn btn-primary">Voir</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h2>Vidéos</h2>
+<div class="row">
+    {% for video in videos %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <video width="100%" controls>
+                <source src="{{ url_for('static', filename='uploads/' + video.filename) }}" type="video/mp4">
+                Votre navigateur ne supporte pas les vidéos.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">{{ video.title }}</h5>
+                <a href="{{ url_for('view_media', media_id=video.id) }}" class="btn btn-primary">Voir</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

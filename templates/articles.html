@@ -1,0 +1,59 @@
+{% extends 'catalogue.html' %}
+{% block title %}Articles - itMoungoi{% endblock %}
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Inscriptions</h1>
+    <div class="card shadow mb-5">
+            <div class="card shadow">
+                <div style="background-color: #2c3e50; color: white">
+                    <h3 class="text-center">Créer un compte</h3>
+                </div>
+                <div class="card-body">
+                    <form  method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nom d'utilisateur</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                   required minlength="3" maxlength="20">
+                            <div class="invalid-feedback">3 à 20 caractères requis</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">Email valide requis</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Mot de passe</label>
+                            <input type="phone" class="form-control" id="password" name="password"
+                                   required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            <div class="invalid-feedback">
+                                Doit contenir 8+ caractères avec majuscule, minuscule et chiffre
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirm_password" class="form-label">Confirmer le mot de passe</label>
+                            <input type="password" class="form-control" id="confirm_password"
+                                   name="confirm_password" required>
+                            <div class="invalid-feedback">Les mots de passe doivent correspondre</div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+                            <label class="form-check-label" for="terms">
+                                J'accepte les <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">conditions d'utilisation</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success">S'inscrire</button>
+                        <div class="modal-body">
+                           <!-- Contenu des conditions -->
+                            <p>Lorem ipsum dolor sit amet...</p>
+                       </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

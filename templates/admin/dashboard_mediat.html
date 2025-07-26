@@ -1,0 +1,102 @@
+{% extends "admin/users.html" %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+
+<style>
+
+    /* Personnalisation du dashboard */
+.card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-header {
+    font-weight: 600;
+    background-color: #f8f9fc;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Animation des cartes stats */
+.card-stats {
+    transition: transform 0.3s;
+}
+
+.card-stats:hover {
+    transform: translateY(-5px);
+}
+</style>
+<div class="section-orange">
+    <div class="container py-5">
+        <div class="card shadow mb-5" style="background-color: #2c3e50; color: white">
+            <div class="container text-center">
+             <h1 class="display-4 mb-4">Uploader un média</h1>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <ul class="nav nav-tabs mb-8">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#image-tab">Image</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#video-tab">Vidéo</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <!-- Onglet Images -->
+        <div class="tab-pane fade show active" id="image-tab">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" name="media_type" value="image">
+
+                <div class="mb-3">
+                    <label class="form-label">Sélectionner une image :</label>
+                    <input type="file" name="image_file" class="form-control" accept="image/*">
+                    <div class="form-text">Formats acceptés: JPG, PNG, GIF (Max 10Mo)</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Uploader l'image</button>
+            </form>
+        </div>
+
+        <!-- Onglet Vidéos -->
+        <div class="tab-pane fade" id="video-tab">
+            <form method="post" enctype="multipart/form-data">
+                <input type="hidden" name="media_type" value="video">
+
+                <div class="mb-3">
+                    <label class="form-label">Sélectionner une vidéo :</label>
+                    <input type="file" name="video_file" class="form-control" accept="video/*">
+                    <div class="form-text">Formats acceptés: MP4, MOV, AVI (Max 500Mo)</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Titre de la vidéo :</label>
+                    <input type="text" name="video_title" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Uploader la vidéo</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Activation des onglets Bootstrap -->
+<script>
+    var tabElms = document.querySelectorAll('a[data-bs-toggle="tab"]');
+    tabElms.forEach(function(tabEl) {
+        tabEl.addEventListener('shown.bs.tab', function (e) {
+            localStorage.setItem('lastTab', e.target.getAttribute('href'));
+        });
+    });
+
+    // Restaurer le dernier onglet actif
+    var lastTab = localStorage.getItem('lastTab');
+    if (lastTab) {
+        var tab = new bootstrap.Tab(document.querySelector(lastTab));
+        tab.show();
+    }
+</script>
+{% endblock %}

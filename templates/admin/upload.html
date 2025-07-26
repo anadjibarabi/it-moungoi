@@ -1,0 +1,87 @@
+{% extends "admin/users.html" %}
+{% block title%}itMoungoi{% endblock%}
+{% block body %}
+<style>
+
+/* ... (conserver les styles précédents) ... */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.image-card h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.delete-btn {
+    background: #f44336 !important;
+    width: 100%;
+}
+
+.delete-btn:hover {
+    background: #d32f2f !important;
+}
+
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.flash.success {
+    background: #dff0d8;
+    color: #3c763d;
+}
+
+.flash.error {
+    background: #f2dede;
+    color: #a94442;
+}
+</style>
+<body>
+<div class="section-orange">
+    <div class="container py-5">
+        <div class="card shadow mb-5" style="background-color: #2c3e50; color: white">
+            <div class="container text-center">
+             <h1 class="display-4 mb-4">Uploader une Image</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+             <div class="form-group">
+                <label for="title">Titre de l'image :</label>
+                <input type="text" id="title" name="title" placeholder="Donnez un titre">
+             </div>
+
+              <div class="form-group">
+                  <label for="file">Sélectionner une image :</label>
+                  <input type="file" id="file" name="file" accept="image/*" required>
+              </div>
+
+               <button type="submit">Uploader</button>
+            </form>
+
+            {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+         </div>
+   </div>
+</body>
+{% endblock%}
